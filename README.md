@@ -1,10 +1,12 @@
+Git Test 
+
 # U06 Receptapp
 
-Denna uppgift handlar om att bygga en receptapp som tillåter användaren att söka på recept och filtera resultat och (VG) spara recept som man gillar i olika listor. Både backend och frontend av applikationen ska deployas och kopplas ihop så att de fungerar tillsammans. 
+Denna uppgift handlar om att bygga en receptapp som tillåter användaren att söka på recept och filtera resultat och (VG) spara recept som man gillar i olika listor. Både backend och frontend av applikationen ska deployas och kopplas ihop så att de fungerar tillsammans.
 
 ## Bekanta er:
 
-I denna uppgift ska ni bekanta er med RecipeAPI, ett projekt skrivet i PHP/Laravel. 
+I denna uppgift ska ni bekanta er med RecipeAPI, ett projekt skrivet i PHP/Laravel.
 
 Bekanta er genom att läsa igenom koden, få igång programmet med bland annat migrationer, seeding och serving. Testa sedan de olika requesten du får tillgång till genom att importera filen:
 "Insomnia_U06_requests.json" till er Insomnia klient. Ni kommer att behöva plocka ut de bearer tokens ni får vid inlogg eller registrering och klistra in i Bearer fältet för att kunna få åtkomst till de API vägar som ligger bakom authentication.
@@ -19,7 +21,7 @@ Ni ska också koppla ihop erat frontend med RecipeAPI backenden. Skapa en sida f
 
 ## Deployment
 
-När frontenden är färdig ska ni deploya både frontend (på e.g. [netlify](https://www.netlify.com/)) och backend (på e.g. [railway](https://railway.app/)). Väl i produktion ska dessa kopplas ihop så att de fungerar harmoniskt tillsammans. 
+När frontenden är färdig ska ni deploya både frontend (på e.g. [netlify](https://www.netlify.com/)) och backend (på e.g. [railway](https://railway.app/)). Väl i produktion ska dessa kopplas ihop så att de fungerar harmoniskt tillsammans.
 
 ## Utöka frontend och backend (VG)
 
