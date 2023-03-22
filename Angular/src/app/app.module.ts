@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 
@@ -10,7 +11,8 @@ import { RecipeCardComponent } from './recipe-card/recipe-card.component';
     RecipeCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
