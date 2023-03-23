@@ -9,12 +9,14 @@ import { RecipeService } from './recipes/recipe.service';
 export class AppComponent {
   title = 'Angular';
 
+  searchquery = "";
+
   constructor(private recipeService:RecipeService) {}
 
   allRecipes: any;
 
   getRecipes() {
-    this.recipeService.getRecipes().subscribe(result => {
+    this.recipeService.getRecipes(this.searchquery).subscribe(result => {
       console.log(result.results);
       console.log(result.results[0]);
 
