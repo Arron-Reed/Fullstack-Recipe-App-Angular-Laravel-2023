@@ -9,7 +9,9 @@ import { catchError } from 'rxjs/operators';
 })
 export class RecipeService {
 
-  urlConfig = "https://api.spoonacular.com/recipes/complexSearch";
+  urlConfig = "https://api.spoonacular.com/recipes/";
+  searchAllRecipes = "complexSearch";
+  searchOneRecipe = "/information"
   appKey = "9416fdcb6b3f4505bdfaf2373774460e";
 
   httpOptions = {
@@ -22,10 +24,18 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getRecipes(q: string) {
-    let searchquery = this.urlConfig + "?apiKey=" + this.appKey + "&query=" + q +"&cuisine=&diet=&type=&instructionsRequired=true&number=12"
+    let searchquery = this.urlConfig + this.searchAllRecipes + "?apiKey=" + this.appKey + "&query=" + q +"&cuisine=&diet=&type=&instructionsRequired=true&addRecipeInformation=true&number=12"
   
     return this.http.get<any>(searchquery, this.httpOptions);
   }
+
+
+  getRecipe(id: string) {
+    let singleSearchQuery = this.urlConfig + id + this.searchOneRecipe + "?apiKey=" + this.appKey
+  
+    return this.http.get<any>(singleSearchQuery, this.httpOptions);
+  }
+
 
 
   private handleError(error: HttpErrorResponse) {
