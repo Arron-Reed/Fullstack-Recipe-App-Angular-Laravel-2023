@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecipeService } from './recipe.service';
 
 @Component({
   selector: 'app-recipes',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent {
+
+  constructor(private recipeService: RecipeService) {}
+
+  allRecipes: any;
+
+  getRecipe(id: any) {
+    this.recipeService.getRecipe(id).subscribe((result) => {
+      console.log(result);
+    });
+  }
 
 }

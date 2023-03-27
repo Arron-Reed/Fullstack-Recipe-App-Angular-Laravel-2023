@@ -30,7 +30,7 @@ export class RecipeService {
   }
 
 
-  getRecipe(id: string) {
+  getRecipe(id: any) {
     let singleSearchQuery = this.urlConfig + id + this.searchOneRecipe + "?apiKey=" + this.appKey
   
     return this.http.get<any>(singleSearchQuery, this.httpOptions);

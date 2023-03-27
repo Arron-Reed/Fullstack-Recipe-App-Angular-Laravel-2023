@@ -25,9 +25,9 @@ export class AppComponent {
     });
   }
 
-  getRecipe() {
-    this.recipeService.getRecipe(this.singleSearchQuery).subscribe((result) => {
-      console.log(result.results);
+  getRecipe(id: any) {
+    this.recipeService.getRecipe(id).subscribe((result) => {
+      console.log(result);
     });
   }
 }
