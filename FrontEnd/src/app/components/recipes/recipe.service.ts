@@ -24,7 +24,7 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getRecipes(q: string) {
-    let searchquery = this.urlConfig + this.searchAllRecipes + "?apiKey=" + this.appKey + "&query=" + q +"&cuisine=&diet=&type=&instructionsRequired=true&addRecipeInformation=true&number=12"
+    let searchquery = this.urlConfig + this.searchAllRecipes + "?apiKey=" + this.appKey + "&query=" + q + "&cuisine=&diet=&type=&instructionsRequired=true&addRecipeInformation=true&number=2"
   
     return this.http.get<any>(searchquery, this.httpOptions);
   }

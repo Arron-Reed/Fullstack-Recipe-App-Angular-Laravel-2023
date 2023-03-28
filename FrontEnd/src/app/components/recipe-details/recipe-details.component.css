@@ -1,4 +1,12 @@
+.recipe-hero {
+  display: grid;
+  gap: 3rem;
+}
 
+.recipe-hero-img {
+  height: 300px;
+  border-radius: var(--borderRadius);
+}
 
 .recipe-info p {
     color: var(--grey-600);
