@@ -3,120 +3,74 @@
 
 
 
-<div>
-<p>recipe-details works!</p>
+
+
 <div>
 <section class="container">
   <article class="recipe-info">
-    <h2>{{allRecipe.aggregateLikes}}Banana Pancakes</h2>
+    <h2>{{allRecipe.title}}</h2>
 
+    <img src="{{allRecipe.image}}" alt="{{allRecipe.title}}">
 
-    <ul *ngFor ="let recipe of allRecipe.analyzedInstructions[0].steps">
-<li>
-{{recipe.step}}
-</li>
-
-    </ul>
-    <p>
-      
-      Shabby chic humblebrag banh mi bushwick, banjo kale chips
-      meggings. Cred selfies sartorial, cloud bread disrupt blue bottle
-      seitan. Dreamcatcher tousled bitters, health goth vegan venmo
-      whatever street art lyft shabby chic pitchfork beard. Drinking
-      vinegar poke tbh, iPhone coloring book polaroid truffaut tousled
-      ramps pug trust fund letterpress. Portland four loko austin
-      chicharrones bitters single-origin coffee. Leggings letterpress
-      occupy pour-over.
-    </p>
 
     <div class="recipe-icons">
 
       <article>
         <i class="fas fa-clock"></i>
-        <h5>prep time</h5>
-        <p>30 min.</p>
+        <h5>Ready in</h5>
+        <p>{{allRecipe.readyInMinutes}} min</p>
       </article>
 
       <article>
         <i class="far fa-clock"></i>
-        <h5>cook time</h5>
-        <p>15 min.</p>
+        <h5>Price per serving</h5>
+        <p>{{allRecipe.pricePerServing}} USD</p>
       </article>
 
       <article>
         <i class="fas fa-user-friends"></i>
-        <h5>serving</h5>
-        <p>6 servings</p>
+        <h5>Servings</h5>
+        <p>{{allRecipe.servings}} servings</p>
       </article>
 
     </div>
 
-    <p class="recipe-tags">
-      Tags : <a href="tag-template.html">beef</a>
-      <a href="tag-template.html">breakfast</a>
-      <a href="tag-template.html">pancakes</a>
-      <a href="tag-template.html">food</a>
-    </p>
+    <article class="mealType-container">
+      <h3>Meal Type</h3>
+  
+      <!-- mealType loop -->
+      <ul class="mealType" *ngFor ="let mealType of allRecipe.dishTypes">
+        <li>{{mealType}}</li>
+      </ul>
+      <!-- end of mealType loop -->
+    </article>
+
+
   </article>
 </section>
 <!-- content -->
 <div class="recipe-content">
-  <article>
-    <h4>instructions</h4>
-    <!-- single instruction -->
-    <div class="single-instruction">
-      <header>
-        <p>step 1</p>
-        <div></div>
-      </header>
-      <p>
-        I'm baby mustache man braid fingerstache small batch venmo
-        succulents shoreditch.
-      </p>
-    </div>
-    <!-- end of single instruction -->
-    <!-- single instruction -->
-    <div class="single-instruction">
-      <header>
-        <p>step 2</p>
-        <div></div>
-      </header>
-      <p>
-        Pabst pitchfork you probably haven't heard of them, asymmetrical
-        seitan tousled succulents wolf banh mi man bun bespoke selfies
-        freegan ethical hexagon.
-      </p>
-    </div>
-    <!-- end of single instruction -->
-    <!-- single instruction -->
-    <div class="single-instruction">
-      <header>
-        <p>step 3</p>
-        <div></div>
-      </header>
-      <p>
-        Polaroid iPhone bitters chambray. Cornhole swag kombucha
-        live-edge.
-      </p>
-    </div>
-    <!-- end of single instruction -->
+  
+  <article class="instructions-container">
+    <h3>Instructions</h3>
+
+    <!-- instruction loop -->
+    <ul class="instructions" *ngFor ="let instruction of allRecipe.analyzedInstructions[0].steps">
+      <li>{{instruction.number}}. {{instruction.step}}.</li>
+    </ul>
+    <!-- end of instruction loop -->
   </article>
-  <article class="second-column">
-    <div>
-      <h4>ingredients</h4>
-      <p class="single-ingredient">1 1/2 cups dry pancake mix</p>
-      <p class="single-ingredient">1/2 cup flax seed meal</p>
-      <p class="single-ingredient">1 cup skim milk</p>
-    </div>
-    <div>
-      <h4>tools</h4>
-      <p class="single-tool">Hand Blender</p>
-      <p class="single-tool">Large Heavy Pot With Lid</p>
-      <p class="single-tool">Measuring Spoons</p>
-      <p class="single-tool">Measuring Cups</p>
-    </div>
+  
+  <article class="ingredients-container">
+    <h3>Ingredients</h3>
+
+    <!-- ingredient loop -->
+    <ul class="ingredients" *ngFor ="let ingredients of allRecipe.extendedIngredients">
+      <li>{{ingredients.original}}</li>
+    </ul>
+    <!-- end of ingredient loop -->
   </article>
  </div>
 </div>
-</div>
+
 </div>

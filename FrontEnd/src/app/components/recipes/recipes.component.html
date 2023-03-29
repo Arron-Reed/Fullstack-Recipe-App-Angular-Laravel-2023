@@ -1,22 +1,21 @@
    
     <h2>Recipe Component</h2>
-
+<div [(ngModel)]="searchquery">
     <p>Search for Recipe</p>
+    <input type="text"><br>
 
-    <input type="text" [(ngModel)]="searchquery"><br>
+    <p>Select your Diet</p>
+    <select id="diet" name="&diet">
+        <option value=""></option>
+        <option value="gluten free">Gluten Free</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="vegan">Vegan</option>
+    </select>
     
-    <input type="radio" id="Gluten-Free" name="diet" value="gluten free">
-    <label for="gluten free">Gluten Free</label><br>
-    
-    <input type="radio" id="Vegetarian" name="diet" value="vegetarian">
-    
-    <label for="vegetarian">Vegetarian</label><br>
-    <input type="radio" id="Vegan" name="diet" value="vegan">
-    
-    <label for="vegan">Vegan</label><br>
+    <br>
     
     <button type="button" routerLink="/recipes" routerLinkActive="active" (click)="getRecipes()">Get Recipes</button>
-
+</div>
 <article>
     <section class="container" *ngFor="let recipe of allRecipes">
         <div class="recipe-card"  [routerLink]="'/recipes/'+recipe.id"

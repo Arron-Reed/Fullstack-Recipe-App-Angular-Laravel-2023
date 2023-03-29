@@ -13,6 +13,7 @@ export class RecipeService {
   searchAllRecipes = "complexSearch";
   searchOneRecipe = "/information"
   appKey = "9416fdcb6b3f4505bdfaf2373774460e";
+  appKey1 = "c79c5dfd430a4d26b946564d958ce954";
 
   httpOptions = {
     headers: new HttpHeaders ({
@@ -24,7 +25,7 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getRecipes(q: string) {
-    let searchquery = this.urlConfig + this.searchAllRecipes + "?apiKey=" + this.appKey + "&query=" + q + "&cuisine=&diet=&type=&instructionsRequired=true&addRecipeInformation=true&number=2"
+    let searchquery = this.urlConfig + this.searchAllRecipes + "?apiKey=" + this.appKey + "&query=" + q + "&cuisine=&type=&instructionsRequired=true&addRecipeInformation=true&number=12"
   
     return this.http.get<any>(searchquery, this.httpOptions);
   }

@@ -10,11 +10,11 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 
 const routes: Routes = [
 
-  { path: '', component: NavbarComponent },
+//  { path: '', component: NavbarComponent },
   { path: 'recipes/:id', component: RecipeDetailsComponent },
   { path: 'lists/:id', component: ListsComponent },
   { path: 'recipes', component: RecipesComponent },
-  { path: 'not-found', component: NotFoundComponent, data: { title: 'Oops' } }
+//  { path: '**', component: NotFoundComponent, data: { title: 'Oops' } }
 ];
 
 @NgModule({
