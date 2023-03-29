@@ -8,15 +8,18 @@ import { RecipeService } from './recipe.service';
 })
 export class RecipesComponent {
 
-  searchquery = '';
-  singleSearchQuery = '';
+  searchquery:string = '';
+  singleSearchQuery:string = '';
+  selected:string = '';
+  message = "hello world";
+  diet:string = '';
 
   constructor(private recipeService: RecipeService) {}
 
   allRecipes: any;
 
   getRecipes() {
-    this.recipeService.getRecipes(this.searchquery).subscribe((result) => {
+    this.recipeService.getRecipes(this.searchquery, this.diet).subscribe((result) => {
       console.log(result.results);
       console.log(result.results[0]);
 
