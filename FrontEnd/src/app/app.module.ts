@@ -9,9 +9,20 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
 import { ListsComponent } from './components/lists/lists.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FridgeRecipesComponent } from './components/fridge-recipes/fridge-recipes.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, RecipesComponent, RecipeDetailsComponent, ListsComponent, NotFoundComponent, NavbarComponent],
+  declarations: [
+    AppComponent,
+    RecipesComponent,
+    RecipeDetailsComponent,
+    ListsComponent,
+    NotFoundComponent,
+    NavbarComponent,
+    FridgeRecipesComponent,
+    HomeComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

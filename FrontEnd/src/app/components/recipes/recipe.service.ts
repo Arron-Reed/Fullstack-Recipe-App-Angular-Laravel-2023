@@ -11,7 +11,8 @@ export class RecipeService {
 
   urlConfig = "https://api.spoonacular.com/recipes/";
   searchAllRecipes = "complexSearch";
-  searchOneRecipe = "/information"
+  searchOneRecipe = "/information";
+  foodFromFridge = "findByIngredients";
   appKey = "9416fdcb6b3f4505bdfaf2373774460e";
   appKey1 = "c79c5dfd430a4d26b946564d958ce954";
 
@@ -33,8 +34,14 @@ export class RecipeService {
 
   getRecipe(id: any) {
     let singleSearchQuery = this.urlConfig + id + this.searchOneRecipe + "?apiKey=" + this.appKey
-  
     return this.http.get<any>(singleSearchQuery, this.httpOptions);
+  }
+
+
+  getFridgeFood(x: string) {
+    let fridgeSearchQuery = this.urlConfig + this.foodFromFridge + "?apiKey=" + this.appKey + "&ingredients=" + x + "&diet&cuisine=&type=&instructionsRequired=true&addRecipeInformation=true&ignorePantry=true&ranking=1&sort=max-used-ingredients&number=12"
+    console.log(fridgeSearchQuery)
+    return this.http.get<any>(fridgeSearchQuery, this.httpOptions);
   }
 
 

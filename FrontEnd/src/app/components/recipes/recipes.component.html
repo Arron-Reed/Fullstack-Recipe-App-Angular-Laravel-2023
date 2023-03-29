@@ -5,7 +5,7 @@
 
     <input type="text" [(ngModel)]="searchquery"><br>
 
-    
+
     <p>Select your Diet</p>
     <select id="diet" name="&diet" [(ngModel)]="diet">
         <option value=""></option>
@@ -17,7 +17,7 @@
     
     <br>
     
-    <button type="button" routerLink="/recipes" routerLinkActive="active" (click)="getRecipes()">Get Recipes</button>
+    <button type="button" routerLink="/recipes/" routerLinkActive="active" (click)="getRecipes()">Get Recipes</button>
 
 <article>
     <section class="container" *ngFor="let recipe of allRecipes">

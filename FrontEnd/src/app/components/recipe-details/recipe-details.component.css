@@ -5,11 +5,11 @@
 
 .recipe-hero-img {
   height: 300px;
-  border-radius: var(--borderRadius);
+  border-radius: 0.25rem;
 }
 
 .recipe-info p {
-    color: var(--grey-600);
+    color: #475569;
   }
   .recipe-icons {
     display: grid;
@@ -20,7 +20,7 @@
   }
   .recipe-icons i {
     font-size: 1.5rem;
-    color: var(--primary-500);
+    color: #645cff;
   }
   .recipe-icons h5,
   .recipe-icons p {
@@ -29,7 +29,7 @@
   }
   
   .recipe-icons p {
-    color: var(--grey-600);
+    color: #475569;
   }
   .recipe-tags {
     display: flex;
@@ -39,9 +39,9 @@
     font-weight: 600;
   }
   .recipe-tags a {
-    background: var(--primary-500);
-    border-radius: var(--borderRadius);
-    color: var(--white);
+    background: #645cff;
+    border-radius: 0.25rem;
+    color: #fff;
     padding: 0.05rem 0.5rem;
     margin: 0 0.25rem;
     text-transform: capitalize;
@@ -71,16 +71,16 @@
   .single-instruction header p {
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--primary-500);
+    color: #645cff;
     margin-bottom: 0;
   }
   .single-instruction > p {
-    color: var(--grey-700);
+    color: #334155;
   }
   
   .single-instruction header div {
     height: 2px;
-    background: var(--grey-300);
+    background: #cbd5e1;
   }
   
   .second-column {
@@ -89,13 +89,13 @@
   }
   
   .single-ingredient {
-    border-bottom: 2px solid var(--grey-300);
+    border-bottom: 2px solid #cbd5e1;
     padding-bottom: 0.75rem;
-    color: var(--grey-700);
+    color: #334155;
   }
   .single-tool {
-    border-bottom: 2px solid var(--grey-300);
+    border-bottom: 2px solid #cbd5e1;
     padding-bottom: 0.75rem;
-    color: var(--primary-500);
+    color: #645cff;
     text-transform: capitalize;
   }
