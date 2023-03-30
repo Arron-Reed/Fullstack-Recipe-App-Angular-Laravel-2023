@@ -1018,8 +1018,8 @@
   
             <div class="card-meta">
 
-                <p class="dish-type" >
-                    {{recipe.missedIngredients[0].name}}</p>
+                <p class="dish-type" *ngFor="let ingredient of recipe.missedIngredients" >
+                    {{ingredient.name}}</p>
   
                 <ul class="dish-stats">
                     
