@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,14 +9,16 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent
+{
 title = 'Login Page';
 
 // Leaving this here so you see how I built this
+
 me = { 
-  name: "arron",
-  email: "arron@arron.com",
-  password: "password",
+  name: "",
+  email: "",
+  password: "",
 }
 
 user2 = {
@@ -30,9 +33,16 @@ newUser = {
   password: "password",
 }
 
-constructor(private userService: UserService){
+value: string =""
 
+//user = {
+//  user.email: "",
+//  user.password: "",
+//}
+
+constructor(private userService: UserService, private router: Router){
 }
+
 
   login() {
     this.userService.loginUser(this.me)
@@ -49,5 +59,12 @@ constructor(private userService: UserService){
       console.log(res[0]);
       this.user2 = res[0];
     })
+  }
+
+  logout() {
+    localStorage.clear()
+    this.router.navigate(["/"])
+    window.location.reload();
+    
   }
 }

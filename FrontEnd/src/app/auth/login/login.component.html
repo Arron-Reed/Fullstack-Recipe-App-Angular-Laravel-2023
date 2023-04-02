@@ -14,4 +14,34 @@
         <li>Username: {{user2.name}}</li>
         <li>Useremail: {{user2.email}}</li>
     </ul>
+
+    <button (click)="logout()" >Login</button>
+
 </article>
+
+
+<section>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Login Here</h3>
+
+        <label for="email">Email</label>
+        <input type="text" placeholder="Email" name="email" [(ngModel)]="me.email">
+        <p> You entered {{me.email}}</p>
+    
+        
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="me.password">
+        <p> You entered {{me.password}}</p>
+
+        <button (click)="login()">Log In</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
+
+</section>

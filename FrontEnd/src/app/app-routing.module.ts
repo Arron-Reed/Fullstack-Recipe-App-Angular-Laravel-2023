@@ -10,6 +10,8 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { DashboardComponent } from './auth/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'food-in-my-fridge', component: FridgeRecipesComponent },
   { path: 'lists/:id', component: ListsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: '**', component: NotFoundComponent, data: { title: 'Oops' } },
 ];

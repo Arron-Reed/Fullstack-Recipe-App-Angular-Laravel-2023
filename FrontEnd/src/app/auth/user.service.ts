@@ -3,8 +3,10 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
 import { User } from '../user';
+import { Router } from '@angular/router';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +21,9 @@ export class UserService {
       'Authorization': 'Bearer'
     })
   };
- 
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private router: Router) { }
 
   
   loginUser(user: User) {
@@ -33,8 +35,8 @@ export class UserService {
       localStorage.setItem("name", res.user.name)
       localStorage.setItem("email", res.user.email)
       localStorage.setItem("token", res.token)
-//    localStorage.clear  use this in Logout Function
-//    Redirect to homePage when logged in
+   //   this.router.navigate(["/"])
+      window.location.reload();
     })
   }
 
@@ -60,6 +62,17 @@ export class UserService {
     .pipe(catchError(this.handleError))
   }
 
+  logOut(user: User) {
+    this.http.post<any>(this.configUrl + "logout", user, this.httpOptions)
+    .pipe(catchError(this.handleError))
+    .subscribe(res => {
+      console.log(res)
+      localStorage.clear()
+
+//    localStorage.clear  use this in Logout Function
+//    Redirect to homePage when logged in
+    })
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

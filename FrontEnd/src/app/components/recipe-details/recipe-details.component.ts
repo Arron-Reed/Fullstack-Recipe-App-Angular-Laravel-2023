@@ -7,11 +7,13 @@ import { RecipeService } from '../recipe.service';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css'],
 })
+
+
 export class RecipeDetailsComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private recipeService: RecipeService
-  ) {}
+  
+
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService) {}
+
 
   ngOnInit(): void {
     this.route.params.subscribe((res) => {
@@ -20,8 +22,10 @@ export class RecipeDetailsComponent implements OnInit {
     });
   }
 
+
   allRecipe: any;
 
+  
   getRecipe(id: any) {
     this.recipeService.getRecipe(id).subscribe((result) => {
       console.log(result);
