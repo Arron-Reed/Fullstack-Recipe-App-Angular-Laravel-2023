@@ -21,8 +21,7 @@
 
 <article>
     <section class="container" *ngFor="let recipe of allRecipes">
-        <div class="recipe-card"  [routerLink]="'/recipes/'+recipe.id"
-            routerLinkActive="active">
+        <div class="recipe-card"  [routerLink]="'/recipes/'+recipe.id" routerLinkActive="active">
             <figure>
                 <img [src]="recipe.image" [alt]="recipe.title">
             </figure>

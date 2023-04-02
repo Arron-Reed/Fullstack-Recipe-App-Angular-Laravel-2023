@@ -11,6 +11,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FridgeRecipesComponent } from './components/fridge-recipes/fridge-recipes.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { HomeComponent } from './components/home/home.component';
     NavbarComponent,
     FridgeRecipesComponent,
     HomeComponent,
+    LoginComponent,
+    LogoutComponent,
+    RegisterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
