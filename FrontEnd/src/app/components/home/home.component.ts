@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   
+  auth: any
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
+    this.auth = localStorage.getItem('token');
   }
 
 }

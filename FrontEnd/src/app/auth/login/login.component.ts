@@ -13,9 +13,8 @@ export class LoginComponent
 {
 title = 'Login Page';
 
-// Leaving this here so you see how I built this
 
-me = { 
+loggin = { 
   name: "",
   email: "",
   password: "",
@@ -33,19 +32,15 @@ newUser = {
   password: "password",
 }
 
-value: string =""
 
-//user = {
-//  user.email: "",
-//  user.password: "",
-//}
 
 constructor(private userService: UserService, private router: Router){
 }
 
-
   login() {
-    this.userService.loginUser(this.me)
+    this.userService.loginUser(this.loggin)
+
+    this.router.navigate(["/"])
   }
 
 
@@ -61,10 +56,4 @@ constructor(private userService: UserService, private router: Router){
     })
   }
 
-  logout() {
-    localStorage.clear()
-    this.router.navigate(["/"])
-    window.location.reload();
-    
-  }
 }

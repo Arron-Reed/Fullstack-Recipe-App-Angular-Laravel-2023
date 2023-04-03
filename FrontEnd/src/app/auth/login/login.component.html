@@ -1,21 +1,12 @@
-<p>Make a Login Form</p>
-<p>Will Automatically sign in as Arron</p>
 
-<button (click)="login()" >Login</button>
 
 <article>
-    <h2>{{ "User no. 2" | uppercase }} </h2>
-    <p>
-        Login
-    </p>
-    <button (click)="login()" >Login</button>
+    
     <button (click)="getUser()" >Get User</button>
     <ul>
         <li>Username: {{user2.name}}</li>
         <li>Useremail: {{user2.email}}</li>
     </ul>
-
-    <button (click)="logout()" >Login</button>
 
 </article>
 
@@ -29,13 +20,10 @@
         <h3>Login Here</h3>
 
         <label for="email">Email</label>
-        <input type="text" placeholder="Email" name="email" [(ngModel)]="me.email">
-        <p> You entered {{me.email}}</p>
-    
+        <input type="text" placeholder="Email" name="email" [(ngModel)]="loggin.email">
         
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" name="password" [(ngModel)]="me.password">
-        <p> You entered {{me.password}}</p>
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="loggin.password">
 
         <button (click)="login()">Log In</button>
         <div class="social">

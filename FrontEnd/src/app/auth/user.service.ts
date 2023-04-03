@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵɵqueryRefresh } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from '../user';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 
 
@@ -25,6 +26,7 @@ export class UserService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  loggedIn: any
   
   loginUser(user: User) {
     this.http.post<any>(this.configUrl + "login", user, this.httpOptions)
@@ -35,7 +37,6 @@ export class UserService {
       localStorage.setItem("name", res.user.name)
       localStorage.setItem("email", res.user.email)
       localStorage.setItem("token", res.token)
-   //   this.router.navigate(["/"])
       window.location.reload();
     })
   }
@@ -49,8 +50,8 @@ export class UserService {
       localStorage.setItem("name", res.user.name)
       localStorage.setItem("email", res.user.email)
       localStorage.setItem("token", res.token)
-//    localStorage.clear  use this in Logout Function
-//    Redirect to homePage when registered and logged in
+      window.location.reload();
+
     })
   }
 
@@ -63,14 +64,14 @@ export class UserService {
   }
 
   logOut(user: User) {
+    this.httpOptions.headers = this.httpOptions.headers.set('Authorization', 'Bearer ' + localStorage.getItem("token"))
     this.http.post<any>(this.configUrl + "logout", user, this.httpOptions)
     .pipe(catchError(this.handleError))
     .subscribe(res => {
       console.log(res)
       localStorage.clear()
 
-//    localStorage.clear  use this in Logout Function
-//    Redirect to homePage when logged in
+      window.location.reload();
     })
   }
 

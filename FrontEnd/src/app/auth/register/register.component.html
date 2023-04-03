@@ -7,15 +7,19 @@
         <h3>Register</h3>
 
         <label for="username">Name</label>
-        <input type="text" placeholder="Fullname" id="name">
+        <input type="text" placeholder="Fullname" name="name" [(ngModel)]="regi.name">
+        <h2>{{regi.name}}</h2>
 
         <label for="password">Email</label>
-        <input type="text" placeholder="Email Address" id="email">
+        <input type="text" placeholder="Email Address" name="email" [(ngModel)]="regi.email">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" placeholder="Password" name="password" [(ngModel)]="regi.password">
 
-        <button>Log In</button>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Repeat Password" name="password_confirmation" [(ngModel)]="regi.password_confirmation">
+
+        <button (click)="register()">Register</button>
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
