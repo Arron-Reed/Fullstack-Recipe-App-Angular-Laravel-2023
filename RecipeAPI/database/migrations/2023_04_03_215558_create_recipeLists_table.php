@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lists', function (Blueprint $table) {
+        Schema::create('recipeLists', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('user_id'); 
             $table->timestamps();
  
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lists');
+        Schema::dropIfExists('recipeLists');
     }
 };

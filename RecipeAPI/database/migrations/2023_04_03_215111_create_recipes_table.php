@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('recipes', function (Blueprint $table) {
-            $table->bigInteger('id');
+            $table->id();
+            $table->bigInteger('recipeId');
             $table->string('title');
             $table->timestamps();
         });

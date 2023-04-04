@@ -51,7 +51,6 @@ export class UserService {
       localStorage.setItem("email", res.user.email)
       localStorage.setItem("token", res.token)
       window.location.reload();
-
     })
   }
 
