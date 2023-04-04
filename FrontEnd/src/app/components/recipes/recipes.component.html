@@ -1,7 +1,11 @@
-   
-    <h2>Recipe Component</h2>
 
-    <p>Search for Recipe</p>
+  
+
+
+
+
+
+  <h1>Search for Recipe</h1>
 
     <input type="text" [(ngModel)]="searchquery"><br>
 
@@ -16,10 +20,40 @@
     <h2>{{diet}}</h2>
     
     <br>
+
+    <p>Type of Meal</p>
+    <select id="type" name="&type" [(ngModel)]="type">
+        <option value=""></option>
+        <option value="main course">Main Course</option>
+        <option value="appetizer">Starter</option>
+        <option value="desert">Desert</option>
+        <option value="snack">Snack</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="side dish">Side Dish</option>
+        <option value="salad">Salad</option>
+    </select>
+    <h2>{{type}}</h2>
+
+    <br>
+
+    <p>Sort</p>
+    <select id="sort" name="&sort" [(ngModel)]="sort">
+        <option value=""></option>
+        <option value="healthiness">Healthiest food first</option>
+        <option value="price&sortDirection=asc">Price (lowest first)</option>
+        <option value="calories&sortDirection=asc">Calories (lowest amount first)</option>
+        <option value="total-fat">Fattiest food first</option>
+    </select>
+    <h2>{{sort}}</h2>
+
+    <br>
     
     <button type="button" routerLink="/recipes/" routerLinkActive="active" (click)="getRecipes()">Get Recipes</button>
 
+
+
 <article>
+    <div><p *ngIf="allRecipes.length === 0" >Your search gave no suggested recipes</p></div>
     <section class="container" *ngFor="let recipe of allRecipes">
         <div class="recipe-card"  [routerLink]="'/recipes/'+recipe.id" routerLinkActive="active">
             <figure>
@@ -28,7 +62,7 @@
   
             <div class="card-meta">
                 
-                <p class="dish-type">{{recipe.id}} {{recipe.veryPopular}}</p>
+                <p class="dish-type">Healthscore {{recipe.healthScore}}/100</p>
   
                 <ul class="dish-stats">
                     
@@ -41,7 +75,7 @@
                             <path d="M8 4V8.5H11" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        {{recipe.readyInMinutes}} min
+                        {{recipe.pricePerServing}} SEK
 
                     </li>
             
@@ -64,3 +98,4 @@
 
     </section> 
 </article>
+
