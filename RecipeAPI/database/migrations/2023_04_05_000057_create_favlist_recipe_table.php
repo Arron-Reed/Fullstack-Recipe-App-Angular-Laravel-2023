@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recipeList_recipe', function (Blueprint $table) {
-            $table->bigInteger('recipeList_id')->unsigned();
+        Schema::create('favlist_recipe', function (Blueprint $table) {
+            $table->bigInteger('favlist_id')->unsigned();
             $table->bigInteger('recipe_id')->unsigned();
-            $table->foreign('recipeList_id')
+            $table->foreign('favlist_id')
                 ->references('id')
-                ->on('recipeLists')
+                ->on('favlists')
                 ->onDelete('cascade');
             $table->foreign('recipe_id')
                 ->references('id')
@@ -30,7 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recipeList_recipe');
-
+        Schema::dropIfExists('favlist_recipe');
     }
 };

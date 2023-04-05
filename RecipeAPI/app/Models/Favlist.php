@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class RecipeList extends Model
+class Favlist extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'name',
+        'user_id',
+    ];
 
     public function users(): BelongsTo
     {
@@ -22,3 +28,4 @@ class RecipeList extends Model
     }
 
 }
+

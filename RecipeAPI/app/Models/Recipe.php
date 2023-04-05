@@ -10,9 +10,9 @@ class Recipe extends Model
 {
     use HasFactory;
 
-    public function recipeLists(): HasMany
+    public function favlists(): HasMany
     {
-        return $this->hasMany(RecipeList::class);
+        return $this->hasMany(Favlist::class);
     }
 
     public function users(): HasMany

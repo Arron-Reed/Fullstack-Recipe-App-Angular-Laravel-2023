@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FavlistController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,14 +22,29 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
 // If logged in...
+
+
 Route::group(['middleware' => 'auth:sanctum'], function() {
     // Logout user
     Route::post('logout', [AuthController::class, 'logout']);
     // Get specific user details
     Route::get('getuser/{id}', [AuthController::class, 'getUser']);
     
-    // TODO: CRUD for recipe lists
+
+
+
+    // Get all favlists
+    Route::get('recipelists', [FavlistController::class, 'index']);
+
+
+    // Create RecipeList
+    //Route::post('create', [RecipeListController::class, 'create']);
 
     // Get specific user details
-    Route::post('create', [RecipeListController::class, 'create']);
+    //Route::post('recipelist', [RecipelistController::class, 'store']);
+
+
+
+
+
 });

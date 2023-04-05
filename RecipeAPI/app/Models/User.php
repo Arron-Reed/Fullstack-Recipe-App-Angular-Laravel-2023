@@ -49,9 +49,9 @@ class User extends Authenticatable
         return $this->hasMany(Recipe::class);
     }
 
-    public function recipeLists(): HasMany
+    public function favlists(): HasMany
     {
-        return $this->hasMany(RecipeList::class);
+        return $this->hasMany(Favlist::class);
     }
 
 }
