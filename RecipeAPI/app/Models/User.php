@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -44,14 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function recipes(): HasMany
+    public function favourites(): HasMany
     {
-        return $this->hasMany(Recipe::class);
-    }
-
-    public function favlists(): HasMany
-    {
-        return $this->hasMany(Favlist::class);
+        return $this->hasMany(Favourite::class);
     }
 
 }

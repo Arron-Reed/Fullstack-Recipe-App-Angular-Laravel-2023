@@ -8,11 +8,8 @@
     <label class="logo" routerLink="/" routerLinkActive="active">RecipeApp</label>
         <ul>
             <li><a routerLink="/recipes" routerLinkActive="active">Search for recipes</a></li>
-            <li><a routerLink="/food-in-my-fridge" routerLinkActive="active">Search by ingredients</a></li>
-            <li><a routerLink="/recipes/1" routerLinkActive="active"></a></li>
-            <li><a routerLink="/lists/1" routerLinkActive="active"></a></li>
-            <li><a routerLink="/random" routerLinkActive="active"></a></li>
-            <li><a *ngIf="auth" routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+            <li><a routerLink="/food-in-my-fridge" routerLinkActive="active">Search by ingredients</a></li>      
+            <li><a *ngIf="auth" routerLink="/favourites" routerLinkActive="active">Favourites</a></li>
             <li><a *ngIf="auth" (click)="logout()">Logout</a></li>
             <li><a *ngIf="!auth" routerLink="/register" routerLinkActive="active">Register</a></li>
             <li><a *ngIf="!auth" routerLink="/login" routerLinkActive="active">Login</a></li>

@@ -2,45 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Favlist;
+use App\Models\Favourite;
+use App\Models\Recipe;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 
-class FavlistController extends Controller
-{
-
+class FavlistController extends Controller {
 
     public function index(Request $request)
     {
         $userID = auth()->user()['id'];
-        $result = Favlist::where('user_id', $userID)->get();
+        $result = Favourite::select("recipeId")->where('user_id', $userID)->get();
         return $result ;
     }
 
+  
 
- /*   public function getUser($id)
+    public function create(Request $request)
     {
-        if (User::where('id', $id)->exists()) {
-            $user = User::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($user, 200);
-        } else {
-            return response()->json([
-                "message" => "User not found"
-            ], 400);
-        }
-    }
-
-/*    public function create(Request $request)
-    {
-        $fields = $request->validate([
-            'recipeList_name' => 'required|string',
+        $fields = ([
+            'recipe_id' => 'required|bigint',
             'user_id' => 'required|bigint',
         
         ]);
-        $recipeLists = RecipeList::create([
-            'recipeList_name' => $fields['recipeList_name'],
-            'user_id' => $fields['user_id'],
+        $favourites = Favourite::create([
+            'recipe_id' => 'recipeId',
+            'user_id' => 'user_id',
         ]);
 
         $response = [
@@ -51,7 +40,7 @@ class FavlistController extends Controller
 
     }
 
-
+/*
     public function showAll(Request $request)
     {
         $userID =  auth()->user()['id'];

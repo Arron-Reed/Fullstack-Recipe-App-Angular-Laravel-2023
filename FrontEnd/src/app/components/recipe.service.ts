@@ -9,12 +9,13 @@ import { catchError } from 'rxjs/operators';
 })
 export class RecipeService {
 
-  urlConfig = "https://api.spoonacular.com/recipes/";
-  searchAllRecipes = "complexSearch";
-  searchOneRecipe = "/information";
-  foodFromFridge = "findByIngredients";
-  appKey = "9416fdcb6b3f4505bdfaf2373774460e";
-  appKey1 = "c79c5dfd430a4d26b946564d958ce954";
+  urlConfig: string = "https://api.spoonacular.com/recipes/";
+  searchAllRecipes: string = "complexSearch";
+  searchOneRecipe: string = "/information";
+  foodFromFridge: string = "findByIngredients";
+  getBulkIds: string = "informationBulk";
+  appKey1: string = "9416fdcb6b3f4505bdfaf2373774460e";
+  appKey: string = "c79c5dfd430a4d26b946564d958ce954";
 
   httpOptions = {
     headers: new HttpHeaders ({
@@ -44,6 +45,12 @@ export class RecipeService {
     return this.http.get<any>(fridgeSearchQuery, this.httpOptions);
   }
 
+
+  getFavourites(bulkIds: string, sort: string) {
+    let FavouritesSearchquery = this.urlConfig + this.getBulkIds + "?apiKey=" + this.appKey +  + "&ids=" + bulkIds + "&sort=" + sort
+  console.log(FavouritesSearchquery)
+    return this.http.get<any>(FavouritesSearchquery, this.httpOptions);
+  }
 
 
   private handleError(error: HttpErrorResponse) {

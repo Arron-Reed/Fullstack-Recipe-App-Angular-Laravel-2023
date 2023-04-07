@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
-import { ListsComponent } from './components/lists/lists.component';
+import { ListsComponent } from './list/lists/lists.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FridgeRecipesComponent } from './components/fridge-recipes/fridge-recipes.component';
@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
+import { CreateListsComponent } from './list/create-list/create-lists.component';
+import { RecipeSearchbarComponent } from './components/recipe-searchbar/recipe-searchbar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { DashboardComponent } from './auth/dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    CreateListsComponent,
+    RecipeSearchbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

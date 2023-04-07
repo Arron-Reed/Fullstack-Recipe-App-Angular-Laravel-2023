@@ -33,10 +33,12 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
 
 
-    // Get all favlists
+    // Get Favourite recipes
     Route::get('recipelists', [FavlistController::class, 'index']);
 
-
+    // Add Favourite recipe
+    Route::post('favourites', [FavlistController::class, 'create']);
+  
     // Create RecipeList
     //Route::post('create', [RecipeListController::class, 'create']);
 

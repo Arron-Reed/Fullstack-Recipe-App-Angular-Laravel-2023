@@ -1,0 +1,6 @@
+.hero{
+  background-image: url(/assets/recipeApp.png);
+  height: 90vh;
+  background-size: cover;
+  background-position: bottom;
+}

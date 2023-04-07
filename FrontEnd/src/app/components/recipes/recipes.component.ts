@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { IfStmt } from '@angular/compiler';
 
@@ -7,7 +7,8 @@ import { IfStmt } from '@angular/compiler';
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
 })
-export class RecipesComponent {
+export class RecipesComponent implements OnInit {
+
   searchquery: string = '';
   singleSearchQuery: string = '';
   selected: string = '';
@@ -15,12 +16,21 @@ export class RecipesComponent {
   type: string = '';
   sort: string = '';
   result: undefined;
+  lists: string = '';
+
+
 
   constructor(private recipeService: RecipeService) {}
 
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
   allRecipes: any;
 
+
   getRecipes() {
+
     this.recipeService
       .getRecipes(this.searchquery, this.diet, this.type, this.sort)
       .subscribe((result) => {

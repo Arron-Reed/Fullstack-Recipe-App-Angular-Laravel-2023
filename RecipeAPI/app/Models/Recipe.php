@@ -2,22 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 class Recipe extends Model
 {
-    use HasFactory;
-
-    public function favlists(): HasMany
+    public function users()
     {
-        return $this->hasMany(Favlist::class);
-    }
-
-    public function users(): HasMany
-    {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class, 'recipe_user', 'recipe_id', 'user_id');
     }
 
 }
