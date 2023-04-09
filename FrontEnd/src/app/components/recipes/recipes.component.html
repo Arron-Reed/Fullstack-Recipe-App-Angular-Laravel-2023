@@ -51,7 +51,7 @@
     <section class="container" *ngFor="let recipe of allRecipes">
         <div class="card" [routerLink]="'/recipes/'+recipe.id" routerLinkActive="active">
        
-            <div class="favourite" [routerLink]="'/favourites/'+recipe.id" routerLinkActive="active">
+            <div class="favourite">
                 <p>Add to</p>
                 <h3>Favourite</h3>
             </div>

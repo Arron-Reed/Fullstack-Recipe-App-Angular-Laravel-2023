@@ -16,8 +16,7 @@ return new class extends Migration
             $table->bigInteger('recipeId');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('created_at');
-            $table->string('updated_at');
+            $table->timestamps();
             });
     }
 

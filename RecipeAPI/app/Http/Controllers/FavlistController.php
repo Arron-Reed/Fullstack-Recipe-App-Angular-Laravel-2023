@@ -20,24 +20,11 @@ class FavlistController extends Controller {
 
   
 
-    public function create(Request $request)
-    {
-        $fields = ([
-            'recipe_id' => 'required|bigint',
-            'user_id' => 'required|bigint',
-        
-        ]);
-        $favourites = Favourite::create([
-            'recipe_id' => 'recipeId',
-            'user_id' => 'user_id',
-        ]);
-
-        $response = [
-          
-        ];
-
-        return response($response, 201);
-
+    public function create(Request $request) {
+        $favourite = new favourite;
+        $favourite->recipeId = $request->recipeId;
+        $favourite->user_id = $request->user_id;
+        $favourite->save();
     }
 
 /*

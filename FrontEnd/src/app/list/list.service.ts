@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { User } from '../user';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { Favourite } from '../favourite';
 
 @Injectable({
   providedIn: 'root'
@@ -32,22 +33,7 @@ export class ListService {
     return this.http.get<any>(this.configUrl + "recipelists", this.httpOptions)
     .pipe(catchError(this.handleError))
   }
-  
 
-
-  
-  loginUser(user: User) {
-    this.http.post<any>(this.configUrl + "login", user, this.httpOptions)
-    .pipe(catchError(this.handleError))
-    .subscribe(res => {
-      console.log(res)
-      localStorage.setItem("id", res.user.id)
-      localStorage.setItem("name", res.user.name)
-      localStorage.setItem("email", res.user.email)
-      localStorage.setItem("token", res.token)
-      window.location.reload();
-    })
-  }
 
   registerUser(user: User) {
     this.http.post<any>(this.configUrl + "register", user, this.httpOptions)
@@ -70,15 +56,12 @@ export class ListService {
     .pipe(catchError(this.handleError))
   }
 
-  logOut(user: User) {
+  addFavourite(favourite: Favourite) {
     this.httpOptions.headers = this.httpOptions.headers.set('Authorization', 'Bearer ' + localStorage.getItem("token"))
-    this.http.post<any>(this.configUrl + "logout", user, this.httpOptions)
+    this.http.post<any>(this.configUrl + "favourites", favourite, this.httpOptions)
     .pipe(catchError(this.handleError))
     .subscribe(res => {
       console.log(res)
-      localStorage.clear()
-
-      window.location.reload();
     })
   }
 

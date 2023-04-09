@@ -19,56 +19,52 @@ export class DashboardComponent implements OnInit{
   email: any
   listofFavourites: any
   fav: any
-
+  allFavourites: any
 
   constructor(private listService: ListService, private recipeService: RecipeService, private router: Router){
   }
-
 
   ngOnInit(): void {
     
     this.auth = localStorage.getItem('token');
 
-    
     this.id = localStorage.getItem('id')
     this.name = localStorage.getItem('name')
     this.email = localStorage.getItem('email')
     
-
-    console.log(this.id)
-    console.log(this.name)
-    console.log(this.email)
+//    console.log(this.id)
+//    console.log(this.name)
+//    console.log(this.email)
 
     this.listService.getLists().subscribe(result => {
-      console.log(result);
-      console.log(result[0],result[1],result[2],result[3],result[4]);
+//      console.log(result);
       this.listofFavourites = result;
-      
-      const favourite = this.listofFavourites
-      
+//      console.log(this.listofFavourites[0])
+        const myJSON = JSON.stringify(this.listofFavourites);
+//      console.log(myJSON)
 
-      
-        
-     
+      let old = myJSON;
+    let stepOne = old.replace(/{"recipeId":/, '');
+    let stepTwo = stepOne.replace(/},{"recipeId":/g, ',');
+    let stepThree = stepTwo.replace(/}]/, '');
+    let bulkIds = stepThree.slice(2,)
+    
+//    console.log(bulkIds);
 
+    this.recipeService
+      .getFavourites(bulkIds)
+      .subscribe((result) => {
+//        console.log(result);
+        this.allFavourites = result;
+        console.log(this.allFavourites)
+      });
 
-  
-
-      
       })
   }
+  bulkIds(bulkIds: any) {
+    throw new Error('Method not implemented.');
+  }
 
-//  getRecipeLists() {
-    
-
-//    getFavourites()
-//  }
-
-//  getUser() {
-//    this.userService.getUser2().subscribe(res => {
-//      console.log(res[0]);
-//      this.user2 = res[0];
-//    })
-//  }
+  
 
 }

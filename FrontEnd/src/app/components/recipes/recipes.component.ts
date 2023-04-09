@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
 import { IfStmt } from '@angular/compiler';
+import { ListService } from 'src/app/list/list.service';
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
 })
+
 export class RecipesComponent implements OnInit {
 
   searchquery: string = '';
@@ -18,9 +20,7 @@ export class RecipesComponent implements OnInit {
   result: undefined;
   lists: string = '';
 
-
-
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService, private listService: ListService) {}
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -30,7 +30,6 @@ export class RecipesComponent implements OnInit {
 
 
   getRecipes() {
-
     this.recipeService
       .getRecipes(this.searchquery, this.diet, this.type, this.sort)
       .subscribe((result) => {
@@ -40,4 +39,5 @@ export class RecipesComponent implements OnInit {
         this.allRecipes = result.results;
       });
   }
+
 }
