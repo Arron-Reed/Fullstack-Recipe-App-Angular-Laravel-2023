@@ -22,6 +22,7 @@ class FavlistController extends Controller {
 
     public function create(Request $request) {
         $favourite = new favourite;
+        
         $favourite->recipeId = $request->recipeId;
         $favourite->user_id = $request->user_id;
         $favourite->save();
