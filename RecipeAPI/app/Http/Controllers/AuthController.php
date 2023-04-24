@@ -30,6 +30,7 @@ class AuthController extends Controller
         return response($response, 201);
     }
 
+
     public function logout(Request $request)
     {
         auth()->user()->tokens()->delete();
@@ -38,6 +39,7 @@ class AuthController extends Controller
         ];
     }
 
+    
     public function login(Request $request)
     {
         $fields = $request->validate([

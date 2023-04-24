@@ -1,111 +1,70 @@
-<div>
 <section class="container">
-  <article class="recipe-info">
-    <h2>{{allRecipe.title}}</h2>
 
-    <img src="{{allRecipe.image}}" alt="{{allRecipe.title}}">
-
-
-    <div class="recipe-icons">
-
-      <article>
-        <i class="fas fa-clock"></i>
-        <h5>Ready in</h5>
-        <p>{{allRecipe.readyInMinutes}} min</p>
-      </article>
-
-      <article>
-        <i class="far fa-clock"></i>
-        <h5>Price per serving</h5>
-        <p>{{allRecipe.pricePerServing | currency:'USD'}} </p>
-      </article>
-
-      <article>
-        <i class="fas fa-user-friends"></i>
-        <h5>Servings</h5>
-        <p>{{allRecipe.servings}} servings</p>
-      </article>
-
-      <button (click)="addtoFav(favourite)">Add to Favourites</button>
-
+  <div class="top-section">
+    <div class="image-left">
+      <img src="{{allRecipe.image}}" alt="{{allRecipe.title}}">
     </div>
+    
 
-    <article class="mealType-container">
-      <h3>Meal Type</h3>
-  
-      <!-- mealType loop -->
-      <ul class="mealType" *ngFor ="let mealType of allRecipe.dishTypes">
-        <li>{{mealType}}</li>
-      </ul>
-      <!-- end of mealType loop -->
+    <div class="ingredients">
+      <h2>{{allRecipe.title}}</h2>
+
+      <article class="ingredients-container">
+        <h3>Ingredients</h3>
+        
+        <ul class="ingredients" *ngFor ="let ingredients of allRecipe.extendedIngredients">
+          <li>{{ingredients.original}}</li>
+        </ul>
+      
+      </article>
+    </div>
+  </div>
+
+  <div class="recipe-icons">
+
+    <article>
+      <i class="fas fa-clock"></i>
+      <h5>Ready in</h5>
+      <p>{{allRecipe.readyInMinutes}} min</p>
     </article>
 
+    <article>
+      <i class="fa fa-dollar-sign"></i>
+      <h5>Cost per Serving</h5>
+      <p>{{ price | number:'1.0-0' }} kr </p>
+    </article>
+
+    <article>
+      <i class="fas fa-user-friends"></i>
+      <h5>Servings</h5>
+      <p>{{allRecipe.servings}} servings</p>
+    </article>
+
+  </div>
+
+  <div class="button-container">
+ <button (click)="addtoFav(favourite)">Add to Favourites</button>
+  </div> 
+
+  <article class="mealType-container">
+    <h3>Meal Type</h3>
+  
+    <ul class="mealType" *ngFor ="let mealType of allRecipe.dishTypes">
+      <li>{{mealType}}</li>
+    </ul>
 
   </article>
-</section>
-<!-- content -->
+
 <div class="recipe-content">
   
   <article class="instructions-container">
     <h3>Instructions</h3>
 
-    <!-- instruction loop -->
     <ul class="instructions" *ngFor ="let instruction of allRecipe.analyzedInstructions[0].steps">
       <li>{{instruction.number}}. {{instruction.step}}.</li>
     </ul>
-    <!-- end of instruction loop -->
   </article>
   
-  <article class="ingredients-container">
-    <h3>Ingredients</h3>
-
-    <!-- ingredient loop -->
-    <ul class="ingredients" *ngFor ="let ingredients of allRecipe.extendedIngredients">
-      <li>{{ingredients.original}}</li>
-    </ul>
-    <!-- end of ingredient loop -->
-  </article>
- </div>
 </div>
+</section>
 
-
-
-
-
-
-
-
-  <section>
-    <div class="container flex">
-      <div class="left">
-        <div class="main_image">
-          <img src="image/p1.jpg" class="slide">
-        </div>
-        <div class="option flex">
-        </div>
-      </div>
-      <div class="right">
-        <h3>Beats Solo3 Wireless</h3>
-        <h4> <small>$</small>999.99 </h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        <h5>Color-Rose Gold</h5>
-        <div class="color flex1">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <h5>Number</h5>
-        <div class="add flex1">
-          <span>-</span>
-          <label>1</label>
-          <span>+</span>
-        </div>
-
-        <button>Add to Favourites</button>
-      </div>
-    </div>
-  </section>

@@ -20,6 +20,8 @@ export class DashboardComponent implements OnInit{
   listofFavourites: any
   fav: any
   allFavourites: any
+  newResult: any
+  
 
   constructor(private listService: ListService, private recipeService: RecipeService, private router: Router){
   }
@@ -28,7 +30,7 @@ export class DashboardComponent implements OnInit{
     
     this.auth = localStorage.getItem('token');
 
-    this.id = localStorage.getItem('id')
+    this.id = localStorage.getItem('user_id')
     this.name = localStorage.getItem('name')
     this.email = localStorage.getItem('email')
     
@@ -37,19 +39,21 @@ export class DashboardComponent implements OnInit{
 //    console.log(this.email)
 
     this.listService.getLists().subscribe(result => {
-//      console.log(result);
+      console.log(result);
       this.listofFavourites = result;
-//      console.log(this.listofFavourites[0])
+      console.log(this.listofFavourites[0])
         const myJSON = JSON.stringify(this.listofFavourites);
-//      console.log(myJSON)
+      console.log(myJSON)
 
       let old = myJSON;
+      console.log(myJSON)
     let stepOne = old.replace(/{"recipeId":/, '');
     let stepTwo = stepOne.replace(/},{"recipeId":/g, ',');
     let stepThree = stepTwo.replace(/}]/, '');
-    let bulkIds = stepThree.slice(2,)
+    let bulkIds = stepThree.slice(1,)
     
-//    console.log(bulkIds);
+    
+    console.log(bulkIds);
 
     this.recipeService
       .getFavourites(bulkIds)
@@ -61,6 +65,7 @@ export class DashboardComponent implements OnInit{
 
       })
   }
+
   bulkIds(bulkIds: any) {
     throw new Error('Method not implemented.');
   }
@@ -68,3 +73,7 @@ export class DashboardComponent implements OnInit{
   
 
 }
+function uniqueBy(arg0: string): any {
+  throw new Error('Function not implemented.');
+}
+

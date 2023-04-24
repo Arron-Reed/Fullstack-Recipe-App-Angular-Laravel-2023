@@ -23,7 +23,6 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipeService, private listService: ListService) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   allRecipes: any;

@@ -1,59 +1,212 @@
+<header>
+    <div class="search-bar">
+        <div class="search-category">
+            <a href="#">
+            <span>Diet Type</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+            </a>
+        
+            <div class="category-menu">
+        
+                <span class="subject">Diet</span>
+        
+                <a href="#" class="menu-item">all design</a>
+        
+                <a href="#" class="menu-item">templates</a>
+        
+                <a href="#" class="menu-item">PNG images</a>
+        
+                <a href="#" class="menu-item">backgrounds</a>
+        
+                <a href="#" class="menu-item">illustration</a>
+        
+                <a href="#" class="menu-item">decors & 3D model</a>
+        
+                <a href="#" class="menu-item">E-commerce</a>
+        
+                <a href="#" class="menu-item">photo</a>
+        
+                <a href="#" class="menu-item">UI & UX</a>
+        
+                <a href="#" class="menu-item">web templates</a>
+        
+                <a href="#" class="menu-item">wordpress</a>
+        
+                <a href="#" class="menu-item">fonts</a>
+        
+            </div>
+      
+        </div>
+      
+        <label class="input-search">
+      
+            <input type="text" placeholder="Search Your Item" />
+      
+            <div class="search-menu">
+      
+                <div class="search-related">
+      
+                    <a href="#">
+      
+                        <span>Fight the Covid</span>
+      
+                        <span>12277 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>Flyer</span>
+      
+                        <span>15614 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>business card</span>
+      
+                        <span>1846 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>logo</span>
+      
+                        <span>46395 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>Eid Festival</span>
+      
+                        <span>329355 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>invitation card</span>
+      
+                        <span>141401 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>Mockup</span>
+      
+                        <span>16033 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>broucher</span>
+      
+                        <span>6815 result</span>
+      
+                    </a>
+      
+                    <a href="#">
+      
+                        <span>PNG images</span>
+      
+                        <span>23786 result</span>
+      
+                    </a>
+      
+                </div>
+      
+            </div>
+      
+        </label>
+      
+        <a href="#" class="search-btn">
+      
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+
+        </a>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <h1>Search for Recipe</h1>
 
-    <input type="text" [(ngModel)]="searchquery"><br>
-
-
-    <p>Select your Diet</p>
-    <select id="diet" name="&diet" [(ngModel)]="diet">
-        <option value=""></option>
-        <option value="gluten free">Gluten Free</option>
-        <option value="vegetarian">Vegetarian</option>
-        <option value="vegan">Vegan</option>
-    </select>
-    <h2>{{diet}}</h2>
     
-    <br>
 
-    <p>Type of Meal</p>
-    <select id="type" name="&type" [(ngModel)]="type">
-        <option value=""></option>
-        <option value="main course">Main Course</option>
-        <option value="appetizer">Starter</option>
-        <option value="desert">Desert</option>
-        <option value="snack">Snack</option>
-        <option value="breakfast">Breakfast</option>
-        <option value="side dish">Side Dish</option>
-        <option value="salad">Salad</option>
-    </select>
-    <h2>{{type}}</h2>
 
-    <br>
 
-    <p>Sort</p>
-    <select id="sort" name="&sort" [(ngModel)]="sort">
-        <option value=""></option>
-        <option value="healthiness">Healthiest food first</option>
-        <option value="price&sortDirection=asc">Price (lowest first)</option>
-        <option value="calories&sortDirection=asc">Calories (lowest amount first)</option>
-        <option value="total-fat">Fattiest food first</option>
-    </select>
-    <h2>{{sort}}</h2>
-
-    <br>
+<div class="search-container">
     
-    <button type="button" routerLink="/recipes/" routerLinkActive="active" (click)="getRecipes()">Get Recipes</button>
+        <div class="searchBar">
+            <input type="text" [(ngModel)]="searchquery" placeholder="Search"><br>
+        </div>
 
-    <p *ngIf="allRecipes.length === 0" >Your search gave no suggested recipes</p>
+        <div class="dietType">
+            <select id="diet" name="&diet" [(ngModel)]="diet">
+                <option value="" placeholder="Diet"></option>
+                <option value="gluten free">Gluten Free</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+            </select>
+        </div>
+
+        <div class="mealType">
+            <select id="type" name="&type" [(ngModel)]="type">
+                <option value=""></option>
+                <option value="main course">Main Course</option>
+                <option value="appetizer">Starter</option>
+                <option value="desert">Desert</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="salad">Salad</option>
+            </select>
+        </div>
+
+        <div class="sort">
+            <select id="sort" name="&sort" [(ngModel)]="sort">
+                <option value=""></option>
+                <option value="healthiness">Healthiest food first</option>
+                <option value="price&sortDirection=asc">Price (lowest first)</option>
+                <option value="calories&sortDirection=asc">Calories (lowest amount first)</option>
+                <option value="total-fat">Fattiest food first</option>
+            </select>
+        </div>
+    
+        <button type="button" routerLink="/recipes/" routerLinkActive="active" (click)="getRecipes()">Search</button>
+
+<!--     <p *ngIf="allRecipes.result === undefined" >Your search gave no suggested recipes</p>  -->   
+
+    </div>
 
 <article>
     <section class="container" *ngFor="let recipe of allRecipes">
         <div class="card" [routerLink]="'/recipes/'+recipe.id" routerLinkActive="active">
        
             <div class="favourite">
-                <p>Add to</p>
-                <h3>Favourite</h3>
+                <h3>Calories</h3>
+                <p>{{ recipe.nutrition.nutrients[0].amount | number:'1.0-0' }}</p>
             </div>
                        
             <div class="imageContainer">
@@ -68,20 +221,10 @@
                     <div class="card-body">
                         <ul class="dish-stats">
                     
-                            <li>
-                                <p >{{recipe.pricePerServing | number:'1.0-0' }} :-</p>
-
-                            </li>
+                            <li><i class="fa-solid fa-sack-dollar"></i></li>
                     
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                    d="M4.9713 2.5C7.00005 2.5 8.00005 4.5 8.00005 4.5C8.00005 4.5 9.00005 2.5 11.0288 2.5C12.6775 2.5 13.9832 3.87937 14 5.52531C14.0344 8.94187 11.2897 11.3716 8.2813 13.4134C8.19836 13.4699 8.10036 13.5 8.00005 13.5C7.89973 13.5 7.80174 13.4699 7.7188 13.4134C4.71067 11.3716 1.96598 8.94187 2.00005 5.52531C2.01692 3.87937 3.32255 2.5 4.9713 2.5Z"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                
-                                {{recipe.id}}
-                            </li>
+                            <li><p> {{ recipe.pricePerServing | number:'1.0-0' }} kr </p></li>
+
                         </ul>
 
                     </div>

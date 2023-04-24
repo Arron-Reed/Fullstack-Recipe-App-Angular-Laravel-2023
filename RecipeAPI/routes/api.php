@@ -30,7 +30,8 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     // Get specific user details
     Route::get('getuser/{id}', [AuthController::class, 'getUser']);
     
-
+    // Delete Recipe from Favourites
+    Route::post('deletefavourite/{id}', [FavlistController::class, 'delete']);
 
 
     // Get Favourite recipes
